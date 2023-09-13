@@ -1,0 +1,130 @@
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    box-shadow: 0px 2px 5px 1px rgb(216, 216, 216);;
+}
+
+.logo {
+    height: 70px;
+    margin: auto 0;
+    
+}
+
+.logo img {
+    object-fit: cover;
+    height: 100%;
+    width: auto;
+}
+
+.nav-list {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-list li {
+    list-style: none;
+    margin: auto 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid rgb(236, 241, 241);
+    padding-bottom: 23px;
+    margin-right: 10px;
+    transition: 0.2s linear;
+}
+
+.nav-list a:hover {
+    border-bottom: 3px solid rgb(30, 28, 28);
+}
+
+.account-tab {
+    padding-left: 10px;
+    padding-top: 25px;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: rgb(249, 249, 249);
+    border-radius: 10px;
+    height: 120px;
+    z-index: 1;
+    width: 200px;
+    right: -60px;
+    top: 70px;
+    display: none;
+}
+
+.account-tab:hover .dropdown{
+    display: block;
+}
+
+#icon-account {
+    position: absolute;
+    right: 85px;
+}
+
+.dropdown li {
+    list-style: none;
+    border-bottom: 1px solid rgb(202, 201, 201);
+    margin: 20px 10px;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.dropdown li a{
+    text-decoration: none;
+    color: black;
+    border-bottom: none;
+    cursor: pointer;
+    
+}
+
+.dropdown li:hover {
+    background-color: rgb(241, 236, 236);
+    border-radius: 10px;
+}
+
+.dropdown li a:hover {
+    border-bottom: none;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    }
+
+.down {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-bottom: 3px;
+}
+
+#cart {
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -15px;
+    right: 40px;
+    text-align: center;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-size: small;
+    clip-path: circle();
+}

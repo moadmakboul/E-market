@@ -1,0 +1,157 @@
+.cart {
+    width: 60%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.down {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-bottom: 3px;
+}
+
+.up {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.cart-product {
+    margin: 20px 0px;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(217, 217, 217);
+}
+
+.image-cart-product {
+    width: auto;
+    height: auto;
+    margin: 10px 10px;
+}
+
+.image-cart-product img {
+    height: 100px;
+    width: auto;
+}
+
+.details-cart-product {
+    margin: auto 20px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    text-align: end;
+}
+
+.price-product-cart {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.cart-product h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(37, 37, 39);
+    width: 50%;
+    margin: auto 0px;
+}
+
+.quantity-product {
+    margin: 10px auto;
+    border: 1px solid rgb(209, 208, 208);
+    padding: 0px 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row-reverse;
+    width: 70px;
+    justify-content: flex-start;
+}
+
+.quantity-product div {
+    margin-left: 10px;
+}
+
+.quantity-display {
+    margin: auto;
+    padding-right: 5px;
+}
+
+.quantity-product div p {
+    cursor: pointer;
+}
+
+.trash {
+    margin-left: 55px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.trash:hover {
+    color: red;
+}
+
+.pricelist-section {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 10px;
+    margin-left: 20px;
+    border-left: 1px solid rgb(201, 201, 201);
+    padding-bottom: 300px;
+}
+
+.pricelist-section h2{
+    margin-bottom: 30px;
+}
+
+.pricelist-section h3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.pricelist-section h3 span {
+    color: rgb(111, 105, 105);
+    font-size: large;
+}
+
+.pricelist-section p {
+    margin-left: 10px;
+    margin-top: 5px;
+    color: rgb(111, 105, 105);
+}
+
+.pricelist-section li {
+    margin-left: 20px;
+    list-style-type: "- ";
+    color: rgb(111, 105, 105);
+}
+
+.pricelist-section button {
+    margin-top: 30px;
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+
+.empty-cart {
+    margin: auto;
+}
+
+.cart-icon-empty {
+    margin: 30px 100px;
+}

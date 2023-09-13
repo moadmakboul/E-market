@@ -1,0 +1,81 @@
+.checkout {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.receipt{
+    width: 45%;
+    background-color: rgb(237, 237, 237);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.checkout-product-box {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(228, 227, 227);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px auto;
+}
+
+.product-checkout-image{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 10px;
+}
+
+.product-checkout-image img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-checkout-info li{
+    list-style: none;
+    margin: 10px 0px;
+}
+
+.product-checkout-info li span {
+    color: rgb(94, 94, 94);
+    margin-right: 10px;
+}
+
+.receipt h3:last-child{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h3 span{
+    font-size: 25px;
+    color: rgb(255, 180, 58);
+}
+
+.payment-section{
+    width: 55%;
+    background-color: rgb(237, 237, 237);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.submit-btn{
+    margin-top: 20px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}

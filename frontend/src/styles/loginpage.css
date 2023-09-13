@@ -1,0 +1,91 @@
+.signin {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 80px auto;
+}
+
+.inputs {
+    width: 50%;
+    padding-right: 10px;
+    border-right: 1px solid rgb(220, 220, 220);
+}
+
+.create-section {
+    width: 50%;
+    margin-left: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column
+}
+
+form input {
+    margin: 15px 0;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: 1px solid rgb(165, 162, 162);
+}
+
+#submit {
+    width: 60%;
+    margin: 30px auto;
+    background-color: rgb(39, 37, 37);
+    font-size: larger;
+    color: white;
+    text-align: center;
+    padding-left: 0;
+}
+
+#submit:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(39, 37, 37);
+}
+
+.inputs h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin: 20px 0px;
+}
+
+.footer-sign {
+    text-align: center;
+}
+
+.footer-sign a {
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.create-section h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin: 20px 0px;
+}
+
+.create-section button{
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(39, 37, 37);
+    font-size: larger;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.create-section button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(39, 37, 37);
+}
+
+.create-section li {
+    list-style: square;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
