@@ -2,6 +2,9 @@ from shopBackend.settings import STRIPE_SECRET_KEY
 from users.models import CustomUser
 from cart.models import Cart
 from products.models import Phone
+from .models import Payment
+from .serializers import PaymentSerializer
+from cart.context import removeItems
 import stripe
 
 def handlePayment(request):
@@ -21,3 +24,26 @@ def handlePayment(request):
         )
     
     return intent
+
+
+def handleHistoryPayment(request, data):
+    user = CustomUser.objects.get(username=request.user)
+    removeItems(request)
+
+    for item in data['items']:
+        Payment.objects.create(user_id=user.id, item=item['title'], quantity=int(item['quantity']))
+    
+    purchases = Payment.objects.filter(user=user.id)
+    serializer = PaymentSerializer(purchases, many=True)
+
+    return serializer.data
+
+
+def retrieveHistoryPayment(request):
+    user = CustomUser.objects.get(username=request.user)
+
+    history = Payment.objects.filter(user=user.id)
+
+    serialize_history = PaymentSerializer(history, many=True)
+
+    return serialize_history.data

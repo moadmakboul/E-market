@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'users.apps.UsersConfig',
     'rest_framework_simplejwt.token_blacklist',
-    'payments',
+    'payments.apps.PaymentsConfig',
 ]
 
 REST_FRAMEWORK = {

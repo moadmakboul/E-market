@@ -15,6 +15,10 @@ const DescriptivePage = () => {
     const [isadded, setIsAdded] = useState(null)
     const { id } = useParams();
 
+    let currentTime = new Date();
+    let futureTime = currentTime.setDate(currentTime.getDate() + 3)
+    let deliveryDate = new Date(futureTime).toDateString()
+
     useEffect(()=>{
         getFullDescription(id)
         getCart(authTokens)
@@ -47,7 +51,7 @@ const DescriptivePage = () => {
                         <div className='product-information'>
                             <h1>{product.details.name}</h1>
                             <h2>${product.price}</h2>
-                            <h3>Order now and get it around Friday, October 13</h3>
+                            <h3>Order now and get it around {deliveryDate}</h3>
                             <div className='extra-information'>
                                 <div>
                                     <BsBoxSeam size={25} className='icons-info' />

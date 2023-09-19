@@ -13,6 +13,7 @@ export const ShopContextProvider = ({children}) => {
     const [cartTotalPrice, setCartTotalPrice] = useState(0)
     const [product, setProduct] = useState([])
     const [loading , setLoading] = useState(true)
+    const [history, setHistory] = useState([])
 
     // Display all products in inventory
     const productsToDisplay = async () => {
@@ -102,6 +103,38 @@ export const ShopContextProvider = ({children}) => {
         }
     }
 
+    let purchasedItems = async (authTokens, data) => {
+        let response = await fetch('http://127.0.0.1:8000/payments/history_payment/', {
+            method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization':'Bearer ' + String(authTokens?.access)
+                },
+                body: JSON.stringify({
+                    'items' : data
+                })
+        })
+        
+        if (response.status === 200){
+            console.log('okay!');
+        }
+    }
+
+    let historyPurchases = async (authTokens) => {
+        let response = await fetch('http://127.0.0.1:8000/payments/get_history_payment', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization':'Bearer ' + String(authTokens?.access)
+            }
+        })
+
+        let data = await response.json()
+
+        if (response.status === 200){
+            setHistory(data)
+        }
+    }
     // handling Data Fetched
 
     const dataToDisplay = (data) => {
@@ -134,11 +167,14 @@ export const ShopContextProvider = ({children}) => {
         cartCountItem: cartCountItem,
         cartIsUpdated: cartIsUpdated,
         cartTotalPrice: cartTotalPrice,
+        history: history,
         productsToDisplay: productsToDisplay,
         getCart: getCart,
         putItemInCart: putItemInCart,
         removeItemFromCart: removeItemFromCart,
         getFullDescription: getFullDescription,
+        purchasedItems: purchasedItems,
+        historyPurchases: historyPurchases,
     }
 
     return(

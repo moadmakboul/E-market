@@ -1,0 +1,23 @@
+#profile {
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+#personal-data p{
+    margin: 15px;
+    font-size: 25px;
+}
+
+#history {
+    margin: 40px;
+}
+
+#empty-history {
+    margin: 20px;
+}
+
+.items p {
+    margin: 15px;
+    font-size: 20px;
+}

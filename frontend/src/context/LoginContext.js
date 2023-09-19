@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import jwtDecode from 'jwt-decode'
 
 
@@ -9,6 +9,7 @@ export const LoginContextProvider = ({children}) => {
 
     const [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
     const [user, setUser] = useState(null)
+    const [userData, setUserData] = useState([])
     const [loading , setLoading] = useState(true)
     const navigate = useNavigate()
 
@@ -45,6 +46,22 @@ export const LoginContextProvider = ({children}) => {
         setAuthTokens(null)
         localStorage.removeItem('authTokens')
         setUser(null)
+    }
+
+    const getUserData = async (authTokens) => {
+        let response = await fetch('http://127.0.0.1:8000/users/get_user/', {
+            method : 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization':'Bearer ' + String(authTokens?.access)
+            }, 
+        })
+
+        let data = await response.json()
+
+        if (response.status === 200) {
+            setUserData(data)
+        }
     }
 
     const updateToken = async () => {
@@ -92,8 +109,10 @@ export const LoginContextProvider = ({children}) => {
     let contextData = {
         user: user,
         authTokens: authTokens,
+        userData: userData,
         login: login,
         logout: logout,
+        getUserData: getUserData,
     }
 
     return(

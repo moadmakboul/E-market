@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
 from .models import CustomUser 
 from .serializers import UserSerializer
 from rest_framework.response import Response
@@ -40,9 +37,9 @@ def create_user(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def get_user(request, pk):
-    user = CustomUser.objects.filter(id=int(pk))
-    serializer = UserSerializer(user, many=True)
+def get_user(request):
+    user = CustomUser.objects.get(username=request.user)
+    serializer = UserSerializer(user)
 
     return Response(serializer.data)
 
