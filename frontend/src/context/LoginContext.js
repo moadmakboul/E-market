@@ -11,6 +11,8 @@ export const LoginContextProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [userData, setUserData] = useState([])
     const [loading , setLoading] = useState(true)
+    const [isValidUsername, setIsValidUsername] = useState(true)
+    const [isValidEmail, setIsvalidEmail] = useState(true)
     const navigate = useNavigate()
 
     const login = async(e) => {
@@ -46,6 +48,7 @@ export const LoginContextProvider = ({children}) => {
         setAuthTokens(null)
         localStorage.removeItem('authTokens')
         setUser(null)
+        navigate('/login')
     }
 
     const getUserData = async (authTokens) => {
@@ -61,6 +64,35 @@ export const LoginContextProvider = ({children}) => {
 
         if (response.status === 200) {
             setUserData(data)
+        }
+    }
+
+    const createUser = async (username, email, password) => {
+        setIsValidUsername(true)
+        setIsvalidEmail(true)
+
+        let response = await fetch('http://127.0.0.1:8000/users/create_user/', {
+            method : 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(
+                {
+                    'username': username,
+                    'email': email,
+                    'password': password
+                }
+            )
+        })
+
+        let data = await response.json()
+        
+        if (response.status === 200){
+            navigate('/login')
+        }
+        if (response.status === 400){
+            setIsValidUsername(!data['username_exists'])
+            setIsvalidEmail(!data['email_exists'])
         }
     }
 
@@ -80,7 +112,9 @@ export const LoginContextProvider = ({children}) => {
             localStorage.setItem('authTokens', JSON.stringify(data))
             setUser(jwtDecode(data.access))
         }else {
-            logout ()
+            setAuthTokens(null)
+            localStorage.removeItem('authTokens')
+            setUser(null)
         }
 
         if (loading){
@@ -110,9 +144,12 @@ export const LoginContextProvider = ({children}) => {
         user: user,
         authTokens: authTokens,
         userData: userData,
+        isValidUsername: isValidUsername,
+        isValidEmail: isValidEmail,
         login: login,
         logout: logout,
         getUserData: getUserData,
+        createUser: createUser,
     }
 
     return(

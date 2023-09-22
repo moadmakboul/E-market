@@ -19,7 +19,7 @@ const LoginPage = () => {
             </div>
             <div className='create-section'>
                 <h3>New to E-Market</h3>
-                <button>Create an Account</button>
+                <button><a href='/register'>Create an Account</a></button>
                 <ul>
                     <li>Delivering in All Africa</li>
                     <li>10 Million Happy Customers</li>

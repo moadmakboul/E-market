@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
+from .context import new_user
 import json
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
@@ -25,14 +26,8 @@ class MyTokenObtainPairView(TokenObtainPairView):
 @api_view(['GET', 'POST'])
 def create_user(request):
     if request.method == 'POST':
-        data = json.loads(request.body)
-        username = data['username']
-        email = data['email']
-        password = data['password']
-        
-        new_user = CustomUser.objects.create_user(username=username, email=email, password=password)
-        new_user.save()
-    return Response(Response.status_code)
+        response, status = new_user(request)
+    return Response(response, status=status)
 
 
 @api_view(['GET'])
@@ -55,6 +50,3 @@ def update_user(request, pk):
         user.update(username=new_username ,email=new_email)
 
     return Response(Response.status_code)
-
-
-

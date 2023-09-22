@@ -1,0 +1,18 @@
+#register_section form {
+    width: 40%;
+    margin: 50px auto;
+}
+
+#create_profile {
+    cursor: pointer;
+    width: 400px;
+    height: 30px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: rgb(39, 37, 37);
+    font-size: larger;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}

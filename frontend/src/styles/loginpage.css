@@ -78,6 +78,11 @@ form input {
     margin-bottom: 30px;
 }
 
+.create-section button a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .create-section button:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(39, 37, 37);
