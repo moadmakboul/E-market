@@ -31,7 +31,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Display products in cart
     const getCart = async (authTokens) => {
-        let response = await fetch('http://127.0.0.1:8000/cart/', {
+        let response = await fetch('http://127.0.0.1:8000/get_cart/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Add product to cart or update quantity
     let putItemInCart = async(phone_id, authTokens, quantity=1) =>{
-        let response = await fetch('http://127.0.0.1:8000/cart/add/', {
+        let response = await fetch('http://127.0.0.1:8000/get_cart/add/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Remove product from cart
     let removeItemFromCart = async(authTokens, id) => {
-        let response = await fetch(`http://127.0.0.1:8000/cart/remove/${id}`, {
+        let response = await fetch(`http://127.0.0.1:8000/get_cart/remove/${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
