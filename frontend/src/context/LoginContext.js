@@ -97,29 +97,34 @@ export const LoginContextProvider = ({children}) => {
     }
 
     const updateToken = async () => {
-        let response = await fetch('http://127.0.0.1:8000/users/api/token/refresh/',{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify({'refresh':authTokens?.refresh})
-        })
-
-        let data = await response.json()
-
-        if (response.status === 200){
-            setAuthTokens(data)
-            localStorage.setItem('authTokens', JSON.stringify(data))
-            setUser(jwtDecode(data.access))
-        }else {
-            setAuthTokens(null)
-            localStorage.removeItem('authTokens')
-            setUser(null)
-        }
-
         if (loading){
             setLoading(false)
         }
+        try {
+            let response = await fetch('http://127.0.0.1:8000/users/api/token/refresh/',{
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({'refresh':authTokens?.refresh})
+            })
+            let data = await response.json()
+
+            if (response.status === 200){
+                setAuthTokens(data)
+                localStorage.setItem('authTokens', JSON.stringify(data))
+                setUser(jwtDecode(data.access))
+            }
+            else {
+                setAuthTokens(null)
+                localStorage.removeItem('authTokens')
+                setUser(null)
+                
+            }
+        } catch( error){
+            console.log(error);
+        }
+        
     }
 
     useEffect(()=> {
@@ -154,7 +159,7 @@ export const LoginContextProvider = ({children}) => {
 
     return(
         <LoginContext.Provider value={contextData}>
-            {loading? null : children}
+            {loading? <h1>Loading</h1> : children}
         </LoginContext.Provider>
     )
 }
