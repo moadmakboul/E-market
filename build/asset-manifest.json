@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.beecdb3a.css",
-    "main.js": "/static/js/main.01e4282c.js",
+    "main.js": "/static/js/main.5116682c.js",
     "static/media/apple_slider_1.jpg": "/static/media/apple_slider_1.3d3df1863c633232ccb1.jpg",
     "static/media/iPhone 14 Pro Max.jpg": "/static/media/iPhone 14 Pro Max.75ece0a61d825bc445a7.jpg",
     "static/media/Iphone SE.jpeg": "/static/media/Iphone SE.e2e9a7c6d6119d6acb6e.jpeg",
@@ -18,10 +18,10 @@
     "static/media/iphone 8 plus.jpg": "/static/media/iphone 8 plus.08ba55f2c83a34f589b7.jpg",
     "index.html": "/index.html",
     "main.beecdb3a.css.map": "/static/css/main.beecdb3a.css.map",
-    "main.01e4282c.js.map": "/static/js/main.01e4282c.js.map"
+    "main.5116682c.js.map": "/static/js/main.5116682c.js.map"
   },
   "entrypoints": [
     "static/css/main.beecdb3a.css",
-    "static/js/main.01e4282c.js"
+    "static/js/main.5116682c.js"
   ]
 }

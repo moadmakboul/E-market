@@ -2,7 +2,6 @@
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [],
-  "homepage":".",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
