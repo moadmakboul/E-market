@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
@@ -24,5 +25,5 @@ urlpatterns = [
     path('get_cart/', include('cart.urls')),
     path('users/', include('users.urls')),
     path('payments/', include('payments.urls')),
-    re_path(r".*", views.index, name='index')
+    re_path('', TemplateView.as_view(template_name="index.html"))
 ]
