@@ -25,5 +25,5 @@ urlpatterns = [
     path('get_cart/', include('cart.urls')),
     path('users/', include('users.urls')),
     path('payments/', include('payments.urls')),
-    re_path('', TemplateView.as_view(template_name="index.html"))
+    re_path(r'.*', TemplateView.as_view(template_name="index.html"))
 ]
