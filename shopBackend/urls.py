@@ -26,5 +26,5 @@ urlpatterns = [
     path('get_cart/', include('cart.urls')),
     path('users/', include('users.urls')),
     path('payments/', include('payments.urls')),
-    re_path(r'.*', views.index)
+    re_path('', views.index)
 ]
