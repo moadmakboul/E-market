@@ -15,7 +15,7 @@ const CheckoutPage = () => {
     useEffect(()=>{
         getCart(authTokens)
         paymentHandler(authTokens)
-    }, [])
+    }, [authTokens])
     
     return (
         <div className='checkout'>

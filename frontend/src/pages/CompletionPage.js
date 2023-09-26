@@ -5,19 +5,24 @@ import { LoginContext } from '../context/LoginContext';
 
 const CompletionPage = () => {
     const {cartedProducts, purchasedItems, getCart} = useContext(ShopContext)
-    const {authTokens, user} = useContext(LoginContext)
+    const {authTokens} = useContext(LoginContext)
 
     useEffect(()=>{
-        if (user){
+        if (authTokens){
             getCart(authTokens)
         }
-    }, [])
+    }, [authTokens])
     
     useEffect(()=>{
-        if (user && cartedProducts.length > 0){
-            purchasedItems(authTokens, cartedProducts)
+        let mounted = true
+        if (authTokens && cartedProducts.length > 0){
+            if (mounted){
+                purchasedItems(authTokens, cartedProducts)
+            }
         }
-    }, [cartedProducts.length])
+        return () => mounted = false
+        
+    }, [authTokens, cartedProducts.length])
 
     return (
         <div className='completion'>

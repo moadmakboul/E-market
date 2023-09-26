@@ -16,7 +16,7 @@ const HomePage = () => {
             getCart(authTokens)
             setStatus(false)
         }
-    }, [cartedProducts.id, status])
+    }, [authTokens, cartedProducts.length, status])
 
     useEffect(()=>{
         productsToDisplay()

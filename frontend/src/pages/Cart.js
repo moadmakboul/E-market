@@ -17,9 +17,9 @@ const Cart = () => {
     const {authTokens, user} = useContext(LoginContext)
 
     useEffect(()=>{
-        if (user){
-            getCart(authTokens)
-        }
+      if (authTokens){
+          getCart(authTokens)
+      }
     }, [cartedProducts.length, cartIsUpdated])
     
     return (

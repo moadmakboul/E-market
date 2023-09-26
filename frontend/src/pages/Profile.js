@@ -5,15 +5,15 @@ import { ShopContext } from '../context/ShopContext';
 import { LoginContext } from '../context/LoginContext';
 
 const Profile = () => {
-    const {authTokens, user, userData, getUserData} = useContext(LoginContext)
+    const {authTokens, userData, getUserData} = useContext(LoginContext)
     const {history, historyPurchases} = useContext(ShopContext)
     
     useEffect(()=>{
-        if(user){
+        if(authTokens){
             historyPurchases(authTokens)
             getUserData(authTokens)
         }
-    }, [])
+    }, [authTokens])
     
     return (
         <div id='profile'>
