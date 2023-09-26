@@ -11,7 +11,6 @@ import { LoginContextProvider } from './context/LoginContext';
 import { ShopContextProvider } from './context/ShopContext';
 import DescriptivePage from './pages/DescriptivePage';
 import CheckoutPage from './pages/CheckoutPage';
-import ItemDescription from './pages/components/ItemDescription';
 import { PaymentContextProvider } from './context/PaymentContext';
 
 function App() {
@@ -28,8 +27,7 @@ function App() {
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/register' element={<RegisterPage />} />
-                <Route exact path='/product/:id' element={<ItemDescription />} />
-                <Route path='/product' element={<DescriptivePage />} />
+                <Route path='/product/:id/' element={<DescriptivePage />} />
                 <Route path='/checkout' element={<CheckoutPage />} />
                 <Route path='/completion' element={<CompletionPage />} />
               </Routes>
