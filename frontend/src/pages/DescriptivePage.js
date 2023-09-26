@@ -19,7 +19,7 @@ const DescriptivePage = () => {
     let currentTime = new Date();
     let futureTime = currentTime.setDate(currentTime.getDate() + 3)
     let deliveryDate = new Date(futureTime).toDateString()
-    
+
     useEffect(()=>{
         getFullDescription(id)
         getCart(authTokens)
@@ -40,6 +40,7 @@ const DescriptivePage = () => {
 
     return (
         <div className='description-section'>
+            <h1>Description</h1>
             {product.length !==0 && 
                 <>
 

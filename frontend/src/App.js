@@ -7,10 +7,10 @@ import LoginPage from './pages/LoginPage'
 import Profile from './pages/Profile'
 import RegisterPage from './pages/RegisterPage'
 import CompletionPage from './pages/CompletionPage';
-import { LoginContextProvider } from './context/LoginContext';
-import { ShopContextProvider } from './context/ShopContext';
 import DescriptivePage from './pages/DescriptivePage';
 import CheckoutPage from './pages/CheckoutPage';
+import { LoginContextProvider } from './context/LoginContext';
+import { ShopContextProvider } from './context/ShopContext';
 import { PaymentContextProvider } from './context/PaymentContext';
 
 function App() {
