@@ -25,7 +25,7 @@ const DescriptivePage = () => {
         if(isadded){
             setIsAdded(false)
         }
-    }, [isadded, id])
+    }, [authTokens, isadded, id])
 
     const addItem = () => {
         if (authTokens){
