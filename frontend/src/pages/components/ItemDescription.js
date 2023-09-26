@@ -4,10 +4,11 @@ import {BsBoxSeam} from 'react-icons/bs'
 import {BiCheckShield} from 'react-icons/bi'
 import {PiWarningCircleBold} from 'react-icons/pi'
 import { ToastContainer, toast } from 'react-toastify';
-import Images from '../images';
+import Images from '../../images';
 import { ShopContext } from '../context/ShopContext';
 import { LoginContext } from '../context/LoginContext';
-import '../styles/descriptivepage.css'
+import '../../styles/descriptivepage.css'
+
 
 const ItemDescription = () => {
     const {product, getFullDescription, putItemInCart, getCart} = useContext(ShopContext)
@@ -36,7 +37,7 @@ const ItemDescription = () => {
             toast('Please Login first!')
         }
     }
-    
+
     return (
         <div>
             {product.length !==0 && 
