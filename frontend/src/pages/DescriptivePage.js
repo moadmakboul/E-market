@@ -14,7 +14,8 @@ const DescriptivePage = () => {
     const {product, getFullDescription, putItemInCart, getCart} = useContext(ShopContext)
     const {authTokens} = useContext(LoginContext)
     const [isadded, setIsAdded] = useState(null)
-    const { id } = useParams();
+    // const { id } = useParams();
+    let id = 2
     
     let currentTime = new Date();
     let futureTime = currentTime.setDate(currentTime.getDate() + 3)
@@ -41,7 +42,7 @@ const DescriptivePage = () => {
     return (
         <div className='description-section'>
             <h1>Description</h1>
-            {/* {product.length !==0 && 
+            {product.length !==0 && 
                 <>
 
                     <div className='overview'>
@@ -85,7 +86,7 @@ const DescriptivePage = () => {
                         <p className='add-information'>{product.details.about}</p>
                     </div>
                 </>
-            } */}
+            }
             <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
