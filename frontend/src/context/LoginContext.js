@@ -18,7 +18,7 @@ export const LoginContextProvider = ({children}) => {
     const login = async(e) => {
         e.preventDefault()
 
-        let response = await fetch('http://127.0.0.1:8000/users/api/token/',{
+        let response = await fetch('https://e-market-z2s5.onrender.com/users/api/token/',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
@@ -52,7 +52,7 @@ export const LoginContextProvider = ({children}) => {
     }
 
     const getUserData = async (authTokens) => {
-        let response = await fetch('http://127.0.0.1:8000/users/get_user/', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/users/get_user/', {
             method : 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ export const LoginContextProvider = ({children}) => {
         setIsValidUsername(true)
         setIsvalidEmail(true)
 
-        let response = await fetch('http://127.0.0.1:8000/users/create_user/', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/users/create_user/', {
             method : 'POST',
             headers: {
                 'Content-Type':'application/json'
@@ -101,7 +101,7 @@ export const LoginContextProvider = ({children}) => {
             setLoading(false)
         }
         try {
-            let response = await fetch('http://127.0.0.1:8000/users/api/token/refresh/',{
+            let response = await fetch('https://e-market-z2s5.onrender.com/users/api/token/refresh/',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json'

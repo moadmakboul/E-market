@@ -11,7 +11,7 @@ export const PaymentContextProvider = ({children}) => {
     const [clientSecret, setClientSecret] = useState('')
 
     const paymentHandler = async(authTokens) => {
-        let response = await fetch('http://localhost:8000/payments/', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/payments/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

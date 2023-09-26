@@ -17,7 +17,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Display all products in inventory
     const productsToDisplay = async () => {
-        let response = await fetch('http://127.0.0.1:8000/phone/phones/')
+        let response = await fetch('https://e-market-z2s5.onrender.com/phone/phones/')
         let data = await response.json()
 
         if (response.status === 200){
@@ -31,7 +31,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Display products in cart
     const getCart = async (authTokens) => {
-        let response = await fetch('http://127.0.0.1:8000/get_cart/', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/get_cart/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Add product to cart or update quantity
     let putItemInCart = async(phone_id, authTokens, quantity=1) =>{
-        let response = await fetch('http://127.0.0.1:8000/get_cart/add/', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/get_cart/add/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Remove product from cart
     let removeItemFromCart = async(authTokens, id) => {
-        let response = await fetch(`http://127.0.0.1:8000/get_cart/remove/${id}`, {
+        let response = await fetch(`https://e-market-z2s5.onrender.com/get_cart/remove/${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,7 +95,7 @@ export const ShopContextProvider = ({children}) => {
 
     // Get all information about product
     let getFullDescription = async(id) => {
-        let response = await fetch(`http://127.0.0.1:8000/phone/phone/${id}`)
+        let response = await fetch(`https://e-market-z2s5.onrender.com/phone/phone/${id}`)
         let data = await response.json()
 
         if (response.status === 200){
@@ -104,7 +104,7 @@ export const ShopContextProvider = ({children}) => {
     }
 
     let purchasedItems = async (authTokens, data) => {
-        let response = await fetch('http://127.0.0.1:8000/payments/history_payment/', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/payments/history_payment/', {
             method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ export const ShopContextProvider = ({children}) => {
     }
 
     let historyPurchases = async (authTokens) => {
-        let response = await fetch('http://127.0.0.1:8000/payments/get_history_payment', {
+        let response = await fetch('https://e-market-z2s5.onrender.com/payments/get_history_payment', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
