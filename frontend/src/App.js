@@ -9,6 +9,7 @@ import RegisterPage from './pages/RegisterPage'
 import CompletionPage from './pages/CompletionPage';
 import DescriptivePage from './pages/DescriptivePage';
 import CheckoutPage from './pages/CheckoutPage';
+import TestPage from './pages/TestPage';
 import { LoginContextProvider } from './context/LoginContext';
 import { ShopContextProvider } from './context/ShopContext';
 import { PaymentContextProvider } from './context/PaymentContext';
