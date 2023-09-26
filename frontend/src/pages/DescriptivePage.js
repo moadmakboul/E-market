@@ -41,7 +41,6 @@ const DescriptivePage = () => {
 
     return (
         <div className='description-section'>
-            <h1>Description</h1>
             {product.length !==0 && 
                 <>
 
