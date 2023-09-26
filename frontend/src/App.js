@@ -11,6 +11,7 @@ import { LoginContextProvider } from './context/LoginContext';
 import { ShopContextProvider } from './context/ShopContext';
 import DescriptivePage from './pages/DescriptivePage';
 import CheckoutPage from './pages/CheckoutPage';
+import ItemDescription from './pages/components/ItemDescription';
 import { PaymentContextProvider } from './context/PaymentContext';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/product' element={<DescriptivePage />}>
-                  <Route path=':id' />
+                  <Route path=':id' element={<ItemDescription/>} />
                 </Route>
                 <Route path='/checkout' element={<CheckoutPage />} />
                 <Route path='/completion' element={<CompletionPage />} />
