@@ -5,8 +5,8 @@ import {BiCheckShield} from 'react-icons/bi'
 import {PiWarningCircleBold} from 'react-icons/pi'
 import { ToastContainer, toast } from 'react-toastify';
 import Images from '../../images';
-import { ShopContext } from '../context/ShopContext';
-import { LoginContext } from '../context/LoginContext';
+import { ShopContext } from '../../context/ShopContext';
+import { LoginContext } from '../../context/LoginContext';
 import '../../styles/descriptivepage.css'
 
 
