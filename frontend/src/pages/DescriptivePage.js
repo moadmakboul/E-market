@@ -41,7 +41,7 @@ const DescriptivePage = () => {
     return (
         <div className='description-section'>
             <h1>Description</h1>
-            {product.length !==0 && 
+            {/* {product.length !==0 && 
                 <>
 
                     <div className='overview'>
@@ -85,7 +85,7 @@ const DescriptivePage = () => {
                         <p className='add-information'>{product.details.about}</p>
                     </div>
                 </>
-            }
+            } */}
             <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
