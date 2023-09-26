@@ -28,7 +28,7 @@ const HomeProduct = ({product, putItemInCart, authTokens, setStatus, removeItemF
     return (
         <div className='product-box'>
             <div className='product-image'>
-            <a href={"/product/"+ product.id}><img src={Images[product.image]} alt="" /></a>
+            <a href={"/product/"+ product.id.toString()}><img src={Images[product.image]} alt="" /></a>
             </div>
             <div className='product-details'>
                 <div className='information'>
