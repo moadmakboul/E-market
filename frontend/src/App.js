@@ -9,7 +9,6 @@ import RegisterPage from './pages/RegisterPage'
 import CompletionPage from './pages/CompletionPage';
 import DescriptivePage from './pages/DescriptivePage';
 import CheckoutPage from './pages/CheckoutPage';
-import TestPage from './pages/TestPage';
 import { LoginContextProvider } from './context/LoginContext';
 import { ShopContextProvider } from './context/ShopContext';
 import { PaymentContextProvider } from './context/PaymentContext';
@@ -24,15 +23,15 @@ function App() {
               <Navbar />
               <Routes>
                 <Route path='/' element={<HomePage />} />
-                <Route path='/profile' element={<Profile />} />
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/register' element={<RegisterPage />} />
-                <Route path='/product'>
+                <Route path='profile' element={<Profile />} />
+                <Route path='login' element={<LoginPage />} />
+                <Route path='cart' element={<Cart />} />
+                <Route path='register' element={<RegisterPage />} />
+                <Route path='product'>
                   <Route index={true} path=':id' element={<DescriptivePage />} />
                 </Route>
-                <Route path='/checkout' element={<CheckoutPage />} />
-                <Route path='/completion' element={<CompletionPage />} />
+                <Route path='checkout' element={<CheckoutPage />} />
+                <Route path='completion' element={<CompletionPage />} />
               </Routes>
             </div>
           </PaymentContextProvider>
