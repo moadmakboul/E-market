@@ -14,8 +14,7 @@ const DescriptivePage = () => {
     const {product, getFullDescription, putItemInCart, getCart} = useContext(ShopContext)
     const {authTokens} = useContext(LoginContext)
     const [isadded, setIsAdded] = useState(null)
-    // const { id } = useParams();
-    let id = 2
+    const { id } = useParams();
     
     let currentTime = new Date();
     let futureTime = currentTime.setDate(currentTime.getDate() + 3)
