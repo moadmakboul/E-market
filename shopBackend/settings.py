@@ -30,7 +30,7 @@ DEBUG = os.environ.get('DEBUG')
 
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://651499185d02d606e2a15f1f--calm-bavarois-522603.netlify.app/']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:

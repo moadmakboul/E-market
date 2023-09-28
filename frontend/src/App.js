@@ -23,15 +23,13 @@ function App() {
               <Navbar />
               <Routes>
                 <Route path='/' element={<HomePage />} />
-                <Route path='profile' element={<Profile />} />
-                <Route path='login' element={<LoginPage />} />
-                <Route path='cart' element={<Cart />} />
-                <Route path='register' element={<RegisterPage />} />
-                <Route path='product'>
-                  <Route index={true} path=':id' element={<DescriptivePage />} />
-                </Route>
-                <Route path='checkout' element={<CheckoutPage />} />
-                <Route path='completion' element={<CompletionPage />} />
+                <Route path='/profile' element={<Profile />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/register' element={<RegisterPage />} />
+                <Route path='/product/:id' element={<DescriptivePage />} />
+                <Route path='/checkout' element={<CheckoutPage />} />
+                <Route path='/completion' element={<CompletionPage />} />
               </Routes>
             </div>
           </PaymentContextProvider>
